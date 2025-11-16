@@ -2,7 +2,7 @@
 Implementimi i PBKDF2-SHA512 në .NET për mbrojtjen e të dhënave
 
 ## Përmbledhje projekti
-Ky projekt është një model i menaxhimit të fjalëkalimeve dhe kriptimit të mesazheve duke përdorur algoritmin **PBKDF2-SHA512** për derivimin e çelësave dhe **AES-GCM** për enkriptim/dekriptim. Projekti është i ndërtuar modularisht dhe mund të zgjerohet lehtësisht për të përfshirë algoritme të tjera të enkriptimit.
+Ky projekt është një model i menaxhimit të fjalëkalimeve dhe kriptimit të mesazheve duke përdorur algoritmin **PBKDF2-SHA512** për derivimin e çelësave dhe **AES-GCM** për enkriptim/dekriptim. Projekti është i ndërtuar sipas arkitekturës modulare dhe mund të zgjerohet lehtësisht për të përfshirë algoritme të tjera të enkriptimit.
 
 - **Fokus kryesor:** Siguria e ruajtjes së fjalëkalimeve dhe mesazheve.
 - **Platforma:** .NET 9.0  
