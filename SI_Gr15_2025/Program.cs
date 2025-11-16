@@ -34,6 +34,11 @@ class Program
         Console.WriteLine($"Ciphertext : {cipherParts[1]}");
         Console.WriteLine($"Tag        : {cipherParts[2]}\n");
 
+        string recovered = encryptor.Decrypt(cipher, key);
+
+        Console.WriteLine("- Dekriptimi me AES-GCM -");
+        Console.WriteLine($"Mesazhi i rikuperuar: {recovered}\n");
+
         Console.WriteLine("- Perfundimi i programit -");
     }
 }
