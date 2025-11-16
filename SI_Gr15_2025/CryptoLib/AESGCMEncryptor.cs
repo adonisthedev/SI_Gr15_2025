@@ -30,7 +30,7 @@ namespace CryptoLib
             byte[] tag = Convert.FromBase64String(parts[2]);
             byte[] plainBytes = new byte[cipherBytes.Length];
 
-       using (var aesGcm = new AesGcm(key, 16))
+            using (var aesGcm = new AesGcm(key, 16))
             {
                 aesGcm.Decrypt(nonce, cipherBytes, tag, plainBytes);
             }
