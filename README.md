@@ -19,7 +19,7 @@ SI_Gr15_2025/
 │ ├─ IEncryptor.cs # Ndërfaqe për enkriptim/dekriptim (për zgjerim)  
 │ ├─ SecurityHelper.cs # Gjenerimi i nonce dhe byte të rastësishëm  
 │ ├─ UserKeyManager.cs # Derivimi i çelësave nga fjalëkalimet  
-│ └─ UserPasswordManager.cs # Menaxhimi i fjalëkalimeve (hash & verify)  
+│ └─ UserPasswordManager.cs # Menaxhimi i fjalëkalimeve (hasho & verifiko)  
 │  
 ├─ Program.cs # Pika hyrëse (programi kryesor) dhe shembulli i përdorimit  
 ├─ SI_Gr15_2025.csproj # File projekti .NET  
@@ -31,8 +31,15 @@ SI_Gr15_2025/
 ## Funksionalitetet kryesore
 
 ### 1. Menaxhimi i fjalëkalimeve
-- Fjalëkalimet ruhen duke përdorur **PBKDF2-SHA512** me një **salt unik** dhe numër iteracionesh të larta (250,000).  
-- Formati i ruajtjes: PBKDF2-SHA512:iterations:saltBase64:hashBase64
+- Fjalëkalimet ruhen duke përdorur **PBKDF2-SHA512** me një **salt unik** dhe numër iteracionesh të larta (250,000).
+- Output-i është i ndarë dhe i lexueshëm:
+    
+   Algoritmi : PBKDF2-SHA512  
+   Iteracionet: {iterations}  
+   Salt: {saltBase64}  
+   Hash: {hashBase64}  
+   Fjalekalimi valid:  {True/Fasle}
+    
  Sigurohet verifikim i fjalëkalimeve me **FixedTimeEquals** për të shmangur sulmet (timing attacks).
 
  ### 2. Derivimi i çelësave
@@ -44,10 +51,11 @@ SI_Gr15_2025/
 - Përveç tekstit të enkoduar, AES-GCM gjeneron:
   - **Nonce (12 bytes)** – i përdorur vetëm një herë për çdo mesazh.  
   - **Tag (16 bytes)** – për verifikim të integritetit dhe autentikimit.
-- Output-i është i ndarë dhe i lexueshëm:  
-Nonce : <base64>  
-Ciphertext : <base64>  
-Tag : <base64>
+- Output-i është i ndarë dhe i lexueshëm:
+    
+   Nonce : {base64}  
+   Ciphertext : {base64}  
+   Tag : {base64}  
 
 ## Si të ekzekutoni projektin  
 
